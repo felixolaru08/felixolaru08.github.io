@@ -1,4 +1,4 @@
-
+/* Reset base */
 * {
   margin: 0;
   padding: 0;
@@ -7,12 +7,14 @@
 
 /* Sfondo applicato a tutta la pagina */
 html, body {
+  min-height: 100vh;        /* sempre almeno altezza dello schermo */
   height: 100%;
   font-family: Arial, sans-serif;
   background-image: url('immagine-sfondo.jpg'); /* <-- cambia con il tuo file */
-  background-size: cover;
+  background-size: cover;   /* copre tutto */
   background-position: center center;
   background-repeat: no-repeat;
+  background-attachment: fixed; /* lo sfondo rimane fisso durante lo scroll */
   color: white;
   position: relative;
 }
