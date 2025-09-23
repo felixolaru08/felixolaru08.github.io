@@ -1,73 +1,67 @@
 
-*/* Reset base */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Struttura base */
-  html, body {
-    height: 100%;
-    font-family: Arial, sans-serif;
-  }
-  
-  /* Sfondo con immagine */
-  body {
-    background-image: url('immagine-sfondo.jpg'); /* <-- cambia con il tuo file */
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    color: white;
-    position: relative;
-  }
-  
-  /* Overlay scuro per rendere il testo più leggibile */
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* oscura lo sfondo leggermente */
-    z-index: 0;
-  }
-  
-  /* Titolo */
-  h1 {
-    position: relative;
-    text-align: center;
-    padding: 30px;
-    font-size: 6em;
-    z-index: 1;
-  }
-  
-  /* Menu di navigazione */
-  nav {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    background: rgba(19, 78, 134, 0.6); /* blu semitrasparente */
-    font-size: 2em;
-  }
-  
-  /* Lista menu */
-  ul.menu {
-    list-style: none;
-    display: flex;
-    gap: 70px;
-    font-size: 1.3em;
-    font-weight: bold;
-  }
-  
-  /* Voci di menu */
-  ul.menu li {
-    cursor: pointer;
-    padding: 10px 15px;
-    transition: color 0.2s ease;
-  }
-  
-  /* Hover menu */
-  ul.menu li:hover {
-    color: #fa5a5a; 
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Sfondo applicato a tutta la pagina */
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-image: url('immagine-sfondo.jpg'); /* <-- cambia con il tuo file */
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  color: white;
+  position: relative;
+}
+
+/* Overlay scuro per rendere leggibile il testo */
+html::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+/* Titolo */
+h1 {
+  position: relative;
+  text-align: center;
+  padding: 30px;
+  font-size: 6em;
+  z-index: 1;
+}
+
+/* Menu di navigazione */
+nav {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
+  background: transparent; /* niente strisce */
+}
+
+/* Lista menu */
+ul.menu {
+  list-style: none;
+  display: flex;
+  gap: 70px;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+/* Voci di menu */
+ul.menu li {
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: color 0.2s ease;
+}
+
+/* Hover menu */
+ul.menu li:hover {
+  color: #fa5a5a; 
+}
