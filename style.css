@@ -62,14 +62,6 @@
   color: #fa5a5a;
 }
 
-/* Contenuto dopo l’immagine */
-.content {
-  background: rgb(189, 234, 241);
-  color: rgb(0, 0, 0);
-  padding: 100px;
-  font-size: 1.2em;
-}
-
 /* Scroll fluido quando si clicca sui link */
 html {
   scroll-behavior: smooth;
@@ -77,9 +69,21 @@ html {
 
 /* Piè di pagina */
 .footer {
-  background: rgba(255, 255, 255, 0.95); /* sfondo bianco trasparente */
-  color: black;
+  background: rgba(0, 0, 0, 0.95); /* sfondo bianco */
+  color: rgb(255, 255, 255);
   text-align: center;
-  padding: 60px 20px;
+  padding: 50px 20px;
   font-size: 1.2em;
+  border-top: 2px solid white; /* linea bianca sopra il footer */
 }
+
+/* Sezione info tra hero e footer */
+.info-section {
+  background: rgb(48, 91, 126); /* sfondo chiaro */
+  color: rgb(255, 255, 255);
+  padding: 80px 20px;
+  text-align: center;
+  font-size: 1.2em;
+  border-top: 2px solid white;    /* linea bianca sopra la sezione info */
+}
+
