@@ -1,4 +1,6 @@
-/* RESET */
+/* =========================================
+   RESET BASE
+========================================= */
 * {
   margin: 0;
   padding: 0;
@@ -6,116 +8,42 @@
 }
 
 body {
-  background-color: #181515;
-  color: white;
   font-family: 'Montserrat', sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background-color: #0a0a0a;
+  color: #fff;
   line-height: 1.6;
+  min-height: 100vh;
   position: relative;
 }
 
-/* === LINEE LATERALI VERDI DRITTE === */
-body::before,
-body::after {
-  content: '';
-  position: absolute; /* segue la pagina, non fissa */
-  top:0px;          /* inizia sotto la navbar */
-  bottom: 100px;      /* termina sopra il footer */
-  width: 4px;         /* spessore linea */
-  background-color: #00ff7f; /* verde neon */
-  z-index: 0;         /* sotto contenuto e footer */
-  pointer-events: none;
-}
-
-/* LATO SINISTRO */
-body::before {
-  left: 0;
-}
-
-/* LATO DESTRO */
-body::after {
-  right: 0;
-}
-
-/* SIDEBAR LATERALI */
-.sidebar-left,
-.sidebar-right {
-  position: fixed;
-  top: 150px;
-  width: 180px;
-  color: #00ff7f;
-  font-size: 0.9rem;
-  z-index: 1; /* sopra le linee, sotto la navbar */
-}
-
-.sidebar-left {
-  left: 25px;
-}
-
-.sidebar-right {
-  right: 25px;
-}
-
-.sidebar-left h4,
-.sidebar-right h4 {
-  font-size: 1.1em;
-  margin-bottom: 10px;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: #00ff7f;
-}
-
-.sidebar-left ul,
-.sidebar-right ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar-left ul li,
-.sidebar-right ul li {
-  margin-bottom: 8px;
-  color: #ccc;
-  transition: color 0.3s ease;
-}
-
-.sidebar-left ul li:hover,
-.sidebar-right ul li:hover {
-  color: #00ff7f;
-  cursor: pointer;
-}
-
-
-
-/* NAVBAR */
+/* =========================================
+   NAVBAR
+========================================= */
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 35px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(10px);
-  z-index: 10;
+  padding: 0 50px;
+  z-index: 1000;
 }
 
-.logo {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: white;
+.navbar .logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #00ff7f;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
-.logo:hover,
-.logo:focus {
-  color: #00ff7f;
-  outline: none;
-  cursor: pointer;
+.navbar .logo:hover {
+  color: #ff9900;
 }
 
 .nav-center {
@@ -128,50 +56,42 @@ body::after {
   list-style: none;
   display: flex;
   gap: 40px;
-  transition: all 0.3s ease;
-  font-size: 1.05em;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 .menu li a {
   text-decoration: none;
-  color: white;
-  font-weight: 600;
-  letter-spacing: 0.5px;
+  color: #fff;
   transition: color 0.3s ease;
 }
 
 .menu li a:hover,
-.menu li a:focus {
-  color: #00ff7f;
-  outline: none;
+.menu li a.active {
+  color: #ff9900;
 }
 
-/* CONTATTI */
 .chat-btn {
   background: #222;
   color: #fff;
-  padding: 8px 15px;
+  padding: 8px 18px;
   border-radius: 6px;
   text-decoration: none;
-  font-size: 1rem;
   font-weight: 600;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.chat-btn:hover,
-.chat-btn:focus {
-  background: #00ff7f;
-  color: black;
-  outline: none;
+.chat-btn:hover {
+  background: #ff9900;
+  color: #000;
 }
 
-/* HAMBURGER MENU */
+/* Hamburger menu */
 .hamburger {
   display: none;
   flex-direction: column;
-  cursor: pointer;
   gap: 5px;
+  cursor: pointer;
 }
 
 .hamburger span {
@@ -181,116 +101,122 @@ body::after {
   border-radius: 2px;
 }
 
-/* HERO */
+/* =========================================
+   HERO
+========================================= */
 .hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  position: relative;
   text-align: center;
-  padding-top: 105px;
+  padding-top: 140px; /* spazio navbar */
+  padding-bottom: 100px;
+  overflow: hidden;
 }
 
-/* Titolo h1 neon soft */
 .hero h1 {
-  font-size: 5em;
+  font-size: 3.5rem;
   font-weight: 800;
+  color: #ff9900;
+  text-shadow: 0 0 8px #ff9900, 0 0 15px #ff990033;
   margin-bottom: 15px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #00ff7f;
-  text-shadow: 0 0 4px #00ff7f, 0 0 10px #00ff7f33;
 }
 
 .hero h3 {
-  font-size: 2em;
-  font-weight: 500;
+  font-size: 1.8rem;
+  font-weight: 600;
   margin-bottom: 15px;
 }
 
 .hero p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-  color: #ccc;
-  font-weight: 400;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 25px;
+  opacity: 0.9;
+}
+
+.hero-img {
+  width: 90%;
+  max-width: 950px;
+  height: auto;
+  border-radius: 15px;
+  margin: 30px auto;
+  display: block;
+  box-shadow: 0 0 40px rgba(255, 153, 0, 0.3);
 }
 
 .btn {
-  background: white;
-  color: black;
-  padding: 12px 25px;
+  background: #ff9900;
+  color: #000;
+  font-weight: 700;
+  padding: 12px 28px;
   border-radius: 6px;
   text-decoration: none;
-  font-weight: 700;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
-  background: #00ff7f;
-  color: black;
+  background: #ffb84d;
+  color: #000;
 }
 
-/* HERO IMG */
-.hero-img {
-  width: 80%;
-  max-width: 950px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px #ffffff7c;
-  margin: 40px 0 30px 0;
-}
-
-/* INTRO + ABOUT US */
-.intro,
-.about-us {
-  padding: 60px 50px;
+/* =========================================
+   CONTENUTO PRINCIPALE
+========================================= */
+.intro {
   max-width: 900px;
   margin: 0 auto;
-  line-height: 1.8;
-  font-size: 1.15em;
+  padding: 60px 20px;
   color: #ddd;
-  font-weight: 400;
-  text-align: center;
-  border-top: 1px solid #222;
 }
 
-.intro h2,
-.about-us h2 {
-  color: #00ff7f;
-  font-size: 2em;
-  margin-bottom: 25px;
+.intro section {
+  margin-bottom: 60px;
+}
+
+.intro h2 {
+  font-size: 2rem;
   font-weight: 700;
+  color: #ff9900;
   text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.intro p,
-.about-us p {
   margin-bottom: 20px;
+  border-left: 5px solid #ff9900;
+  padding-left: 10px;
 }
 
-/* FOOTER */
+.intro p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+.intro ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.intro ul li {
+  margin-bottom: 12px;
+  padding-left: 0;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
 .footer {
-  background: #000;
+  background: #0f0f0f;
   color: #aaa;
+  padding: 60px 20px 30px;
   text-align: center;
-  padding: 50px 15px 25px 15px;
-  margin-top: auto;
-  font-size: 0.9rem;
-  letter-spacing: 0.5px;
-  font-weight: 500;
-  position: relative; /* necessario per z-index */
-  z-index: 2;         /* sopra le barre laterali */
+  font-size: 0.95rem;
 }
 
 .footer-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
   flex-wrap: wrap;
-  gap: 60px;
+  gap: 50px;
   max-width: 1000px;
-  margin: 0 auto 20px auto;
+  margin: 0 auto 20px;
   text-align: left;
 }
 
@@ -299,8 +225,7 @@ body::after {
 }
 
 .footer-col h3 {
-  color: #00ff7f;
-  font-size: 1.1em;
+  color: #ff9900;
   margin-bottom: 15px;
   font-weight: 700;
 }
@@ -308,35 +233,32 @@ body::after {
 .footer-col p,
 .footer-col a {
   color: #aaa;
-  font-size: 0.95rem;
-  line-height: 1.6;
   text-decoration: none;
-  transition: color 0.3s ease;
+  line-height: 1.6;
 }
 
 .footer-col a:hover {
-  color: #00ff7f;
+  color: #ff9900;
 }
 
 .footer-col ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  list-style: none; /* togli punti elenco */
+  padding-left: 0;
 }
 
 .footer-col ul li {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .footer-col .social {
   display: flex;
   gap: 15px;
-  font-size: 1.3em;
+  font-size: 1.2rem;
   margin-top: 5px;
 }
 
 .footer-col .social a:hover {
-  color: #00ff7f;
+  color: #ff9900;
 }
 
 .footer-bottom {
@@ -347,202 +269,131 @@ body::after {
   font-size: 0.85rem;
 }
 
-/* RESPONSIVE */
+/* =========================================
+   BARRE LATERALI DECORATIVE
+========================================= */
+body.crypto-page::before,
+body.crypto-page::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  z-index: 1;
+}
+
+body.crypto-page::before {
+  left: 0;
+  background: #ffcc00;
+}
+
+body.crypto-page::after {
+  right: 0;
+  background: #ffcc00;
+}
+
+/* =========================================
+   SIDEBAR LATERALI
+========================================= */
+.sidebar-left,
+.sidebar-right {
+  position: fixed;
+  top: 150px;
+  width: 180px;
+  font-size: 0.9rem;
+  color: #00ff7f;
+  z-index: 2;
+}
+
+.sidebar-left {
+  left: 25px;
+}
+
+.sidebar-right {
+  right: 25px;
+}
+
+.sidebar-left h4,
+.sidebar-right h4 {
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: #00ff7f;
+}
+
+.sidebar-left ul,
+.sidebar-right ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-left ul li,
+.sidebar-right ul li {
+  margin-bottom: 8px;
+  color: #ccc;
+  transition: color 0.3s;
+}
+
+.sidebar-left ul li:hover,
+.sidebar-right ul li:hover {
+  color: #00ff7f;
+  cursor: pointer;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+  .hero h3 {
+    font-size: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .navbar {
     padding: 15px 20px;
   }
-
   .menu {
     position: absolute;
-    top: 65px;
+    top: 80px;
     left: 0;
     right: 0;
+    background: rgba(0,0,0,0.95);
     flex-direction: column;
-    background: rgba(0, 0, 0, 0.9);
     display: none;
     backdrop-filter: blur(12px);
   }
-
   .menu.active {
     display: flex;
   }
-
   .menu li {
     margin: 15px 0;
   }
-
   .hamburger {
     display: flex;
   }
-
   .hero h1 {
-    font-size: 3em;
+    font-size: 2.4rem;
   }
-
   .hero h3 {
-    font-size: 1.5em;
+    font-size: 1.2rem;
   }
-
-  .hero {
-    padding-top: 100px;
-  }
-
   .hero-img {
-    width: 90%;
-    max-width: 400px;
-    margin: 30px 0 20px 0;
+    max-width: 90%;
+    margin: 20px auto;
   }
-
-  .intro,
-  .about-us {
-    max-width: 700px;
+  .intro {
     padding: 50px 15px;
   }
-
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 40px;
-  }
-
-  .footer-col {
-    flex: none;
-    width: 100%;
-    max-width: 400px;
-  }
-
-  .footer-col .social {
-    justify-content: center;
-  }
-
   .sidebar-left,
   .sidebar-right {
-    display: none; /* nasconde sidebar su mobile */
+    display: none;
   }
-
-  body::before,
-  body::after {
-    display: none; /* nasconde barre laterali su mobile */
+  body.crypto-page::before,
+  body.crypto-page::after {
+    display: none;
   }
 }
-
-/* --- PAGINA CRYPTO AGGIORNATA --- */
-body.crypto-page {
-  background-color: #1b1818;
-  position: relative;
-  overflow-x: hidden;
-}
-
-/* Bordo laterale giallo */
-body.crypto-page::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: #ffcc00;
-  z-index: 1;
-}
-
-body.crypto-page::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 6px;
-  height: 100%;
-  background: #ffcc00;
-  z-index: 1;
-}
-
-/* HERO */
-body.crypto-page .hero h1 {
-  color: #ff9900;
-  text-shadow: 0 0 4px #ff9900, 0 0 12px #ff990033;
-  position: relative;
-  z-index: 2;
-}
-
-body.crypto-page .hero p {
-  color: #ddd;
-  position: relative;
-  z-index: 2;
-}
-
-/* CONTENUTO */
-body.crypto-page .intro h2 {
-  color: #ff9900;
-  font-size: 2em;
-  margin-bottom: 25px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  position: relative;
-  z-index: 2;
-  padding-top: 70px;
-}
-
-body.crypto-page .intro p {
-  color: #ccc;
-  margin-bottom: 20px;
-  line-height: 1.7;
-  border-bottom: 1px solid #333; /* linea sottile tra i paragrafi */
-  padding-bottom: 30px;
-  position: relative;
-  z-index: 2;
-}
-
-/* Rimuovere punti elenco */
-body.crypto-page .intro ul {
-  list-style: none;
-  margin: 10px 0 20px 0;
-  padding-left: 0;
-  color: #ddd;
-}
-
-body.crypto-page .intro ul li {
-  margin-bottom: 10px;
-  padding-left: 0;
-}
-
-/* Titoli secondari interni */
-body.crypto-page .intro h3 {
-  color: #fff;
-  margin-top: 25px;
-  margin-bottom: 10px;
-  font-weight: 600;
-  border-left: 4px solid #ff9900;
-  padding-left: 10px;
-}
-
-/* Bottone */
-body.crypto-page .btn {
-  background: #ff9900;
-  color: black;
-  position: relative;
-  z-index: 2;
-}
-
-body.crypto-page .btn:hover {
-  background: #ffb84d;
-  color: black;
-}
-
-/* FOOTER */
-body.crypto-page .footer {
-  background: #0f0f0f;
-  position: relative;
-  z-index: 2;
-}
-
-body.crypto-page .footer-col h3 {
-  color: #ff9900;
-}
-
-body.crypto-page .footer-col a:hover {
-  color: #ff9900;
-}
-
