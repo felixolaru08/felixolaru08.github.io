@@ -1,4 +1,9 @@
 /* =========================================
+   IMPORT FONT
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+/* =========================================
    RESET BASE
 ========================================= */
 * {
@@ -14,6 +19,12 @@ body {
   line-height: 1.6;
   min-height: 100vh;
   position: relative;
+
+  /* Default accent color */
+  --accent-color: #ff9900;
+  --accent-hover: #ffb84d;
+  --accent-light: rgba(255, 153, 0, 0.3);
+  --accent-shadow: rgba(255, 153, 0, 0.3);
 }
 
 /* =========================================
@@ -37,13 +48,13 @@ body {
 .navbar .logo {
   font-size: 1.6rem;
   font-weight: 800;
-  color: #00ff7f;
+  color: var(--accent-color);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .navbar .logo:hover {
-  color: #ff9900;
+  color: var(--accent-hover);
 }
 
 .nav-center {
@@ -68,7 +79,7 @@ body {
 
 .menu li a:hover,
 .menu li a.active {
-  color: #ff9900;
+  color: var(--accent-color);
 }
 
 .chat-btn {
@@ -82,7 +93,7 @@ body {
 }
 
 .chat-btn:hover {
-  background: #ff9900;
+  background: var(--accent-color);
   color: #000;
 }
 
@@ -107,7 +118,7 @@ body {
 .hero {
   position: relative;
   text-align: center;
-  padding-top: 140px; /* spazio navbar */
+  padding-top: 140px;
   padding-bottom: 100px;
   overflow: hidden;
 }
@@ -115,8 +126,8 @@ body {
 .hero h1 {
   font-size: 3.5rem;
   font-weight: 800;
-  color: #ff9900;
-  text-shadow: 0 0 8px #ff9900, 0 0 15px #ff990033;
+  color: var(--accent-color);
+  text-shadow: 0 0 8px var(--accent-color), 0 0 15px var(--accent-light);
   margin-bottom: 15px;
 }
 
@@ -140,11 +151,11 @@ body {
   border-radius: 15px;
   margin: 30px auto;
   display: block;
-  box-shadow: 0 0 40px rgba(255, 153, 0, 0.3);
+  box-shadow: 0 0 40px var(--accent-shadow);
 }
 
 .btn {
-  background: #ff9900;
+  background: var(--accent-color);
   color: #000;
   font-weight: 700;
   padding: 12px 28px;
@@ -154,7 +165,7 @@ body {
 }
 
 .btn:hover {
-  background: #ffb84d;
+  background: var(--accent-hover);
   color: #000;
 }
 
@@ -175,10 +186,10 @@ body {
 .intro h2 {
   font-size: 2rem;
   font-weight: 700;
-  color: #ff9900;
+  color: var(--accent-color);
   text-transform: uppercase;
   margin-bottom: 20px;
-  border-left: 5px solid #ff9900;
+  border-left: 5px solid var(--accent-color);
   padding-left: 10px;
 }
 
@@ -196,7 +207,6 @@ body {
 
 .intro ul li {
   margin-bottom: 12px;
-  padding-left: 0;
 }
 
 /* =========================================
@@ -225,7 +235,7 @@ body {
 }
 
 .footer-col h3 {
-  color: #ff9900;
+  color: var(--accent-color);
   margin-bottom: 15px;
   font-weight: 700;
 }
@@ -238,11 +248,11 @@ body {
 }
 
 .footer-col a:hover {
-  color: #ff9900;
+  color: var(--accent-color);
 }
 
 .footer-col ul {
-  list-style: none; /* togli punti elenco */
+  list-style: none;
   padding-left: 0;
 }
 
@@ -258,7 +268,7 @@ body {
 }
 
 .footer-col .social a:hover {
-  color: #ff9900;
+  color: var(--accent-color);
 }
 
 .footer-bottom {
@@ -272,8 +282,8 @@ body {
 /* =========================================
    BARRE LATERALI DECORATIVE
 ========================================= */
-body.crypto-page::before,
-body.crypto-page::after {
+body::before,
+body::after {
   content: '';
   position: fixed;
   top: 0;
@@ -282,15 +292,8 @@ body.crypto-page::after {
   z-index: 1;
 }
 
-body.crypto-page::before {
-  left: 0;
-  background: #ffcc00;
-}
-
-body.crypto-page::after {
-  right: 0;
-  background: #ffcc00;
-}
+body::before { left: 0; }
+body::after { right: 0; }
 
 /* =========================================
    SIDEBAR LATERALI
@@ -301,24 +304,19 @@ body.crypto-page::after {
   top: 150px;
   width: 180px;
   font-size: 0.9rem;
-  color: #00ff7f;
+  color: var(--accent-color);
   z-index: 2;
 }
 
-.sidebar-left {
-  left: 25px;
-}
-
-.sidebar-right {
-  right: 25px;
-}
+.sidebar-left { left: 25px; }
+.sidebar-right { right: 25px; }
 
 .sidebar-left h4,
 .sidebar-right h4 {
   font-weight: 700;
   margin-bottom: 10px;
   text-transform: uppercase;
-  color: #00ff7f;
+  color: var(--accent-color);
 }
 
 .sidebar-left ul,
@@ -336,7 +334,7 @@ body.crypto-page::after {
 
 .sidebar-left ul li:hover,
 .sidebar-right ul li:hover {
-  color: #00ff7f;
+  color: var(--accent-color);
   cursor: pointer;
 }
 
@@ -344,18 +342,12 @@ body.crypto-page::after {
    RESPONSIVE DESIGN
 ========================================= */
 @media (max-width: 1024px) {
-  .hero h1 {
-    font-size: 3rem;
-  }
-  .hero h3 {
-    font-size: 1.5rem;
-  }
+  .hero h1 { font-size: 3rem; }
+  .hero h3 { font-size: 1.5rem; }
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    padding: 15px 20px;
-  }
+  .navbar { padding: 15px 20px; }
   .menu {
     position: absolute;
     top: 80px;
@@ -366,34 +358,743 @@ body.crypto-page::after {
     display: none;
     backdrop-filter: blur(12px);
   }
-  .menu.active {
-    display: flex;
-  }
-  .menu li {
-    margin: 15px 0;
-  }
-  .hamburger {
-    display: flex;
-  }
-  .hero h1 {
-    font-size: 2.4rem;
-  }
-  .hero h3 {
-    font-size: 1.2rem;
-  }
-  .hero-img {
-    max-width: 90%;
-    margin: 20px auto;
-  }
-  .intro {
-    padding: 50px 15px;
-  }
+  .menu.active { display: flex; }
+  .menu li { margin: 15px 0; }
+  .hamburger { display: flex; }
+  .hero h1 { font-size: 2.4rem; }
+  .hero h3 { font-size: 1.2rem; }
+  .hero-img { max-width: 90%; margin: 20px auto; }
+  .intro { padding: 50px 15px; }
   .sidebar-left,
-  .sidebar-right {
-    display: none;
+  .sidebar-right { display: none; }
+  body::before,
+  body::after { display: none; }
+}
+
+/* =========================================
+   TEMI SPECIFICI
+========================================= */
+body.home-page {
+  --accent-color: #00ff7f;
+  --accent-hover: #33ffaa;
+  --accent-light: rgba(0, 255, 127, 0.3);
+  --accent-shadow: rgba(0, 255, 127, 0.3);
+}
+
+body.crypto-page {
+  --accent-color: #ff9900;
+  --accent-hover: #ffb84d;
+  --accent-light: rgba(255, 153, 0, 0.3);
+  --accent-shadow: rgba(255, 153, 0, 0.3);
+}
+
+body.forex-page {
+  --accent-color: #007bff;
+  --accent-hover: #339dff;
+  --accent-light: rgba(0, 123, 255, 0.3);
+  --accent-shadow: rgba(0, 123, 255, 0.3);
+}
+
+/* Barre decorative per tema */
+body.home-page::before,
+body.home-page::after { background: #00ff7f; }
+body.crypto-page::before,
+body.crypto-page::after { background: #ffcc00; }
+body.forex-page::before,
+body.forex-page::after { background: #339dff; }
+
+body.futures-page {
+  --accent-color: #9b59b6;       /* Viola principale */
+  --accent-hover: #b377d2;       /* Viola chiaro al passaggio */
+  --accent-light: rgba(155, 89, 182, 0.3); /* Ombra viola chiara */
+  --accent-shadow: rgba(155, 89, 182, 0.3);
+}
+
+/* Barre laterali decorative per Futures */
+body.futures-page::before,
+body.futures-page::after {
+  background: #9b59b6;
+}
+
+/* =========================================
+   TEMA GLOSSARIO (GIALLO)
+========================================= */
+body.glossario-page {
+  --accent-color: #f1c40f;       /* Giallo principale */
+  --accent-hover: #f4d03f;       /* Giallo chiaro per hover */
+  --accent-light: rgba(241, 196, 15, 0.3); /* Ombra gialla chiara */
+  --accent-shadow: rgba(241, 196, 15, 0.3);
+}
+
+/* Barre laterali decorative per Glossario */
+body.glossario-page::before,
+body.glossario-page::after {
+  background: #f1c40f;
+}
+
+/* Hero e bottoni */
+body.glossario-page .hero h1,
+body.glossario-page .hero h3 {
+  color: #f1c40f;
+  text-shadow: 0 0 8px #f1c40f, 0 0 15px rgba(241, 196, 15, 0.2);
+}
+
+body.glossario-page .btn {
+  background: #f1c40f;
+  color: #000;
+}
+
+body.glossario-page .btn:hover {
+  background: #f4d03f;
+  color: #000;
+}
+
+/* Titoli principali delle sezioni */
+body.glossario-page .intro h2 {
+  color: #f1c40f;
+  border-left: 5px solid #f1c40f;
+}
+
+/* Hover dei link */
+body.glossario-page .menu li a:hover,
+body.glossario-page .menu li a.active {
+  color: #f1c40f;
+}
+
+body.glossario-page .chat-btn:hover {
+  background: #f1c40f;
+  color: #000;
+}
+
+/* Footer */
+body.glossario-page .footer-col h3 {
+  color: #f1c40f;
+}
+
+body.glossario-page .footer-col a:hover,
+body.glossario-page .footer-bottom {
+  color: #f1c40f;
+}
+
+/* =========================================
+   TEMA STRATEGIE (ROSSO)
+========================================= */
+body.strategie-page {
+  --accent-color: #e74c3c;       /* Rosso principale */
+  --accent-hover: #ff6b5a;       /* Rosso più chiaro per hover */
+  --accent-light: rgba(231, 76, 60, 0.3);
+  --accent-shadow: rgba(231, 76, 60, 0.4);
+}
+
+/* Barre laterali decorative */
+body.strategie-page::before,
+body.strategie-page::after {
+  background: #e74c3c;
+}
+
+/* Hero e bottoni */
+body.strategie-page .hero h1,
+body.strategie-page .hero h3 {
+  color: #e74c3c;
+  text-shadow: 0 0 8px #e74c3c, 0 0 15px rgba(231, 76, 60, 0.2);
+}
+
+body.strategie-page .btn {
+  background: #e74c3c;
+  color: #000;
+}
+
+body.strategie-page .btn:hover {
+  background: #ff6b5a;
+  color: #000;
+}
+
+/* Titoli principali */
+body.strategie-page .intro h2 {
+  color: #e74c3c;
+  border-left: 5px solid #e74c3c;
+}
+
+/* Navbar link */
+body.strategie-page .menu li a:hover,
+body.strategie-page .menu li a.active {
+  color: #e74c3c;
+}
+
+/* Chat button hover */
+body.strategie-page .chat-btn:hover {
+  background: #e74c3c;
+  color: #000;
+}
+
+/* Footer */
+body.strategie-page .footer-col h3 {
+  color: #e74c3c;
+}
+
+body.strategie-page .footer-col a:hover,
+body.strategie-page .footer-bottom {
+  color: #e74c3c;
+}
+
+/* =========================================
+   TEMA RISCHIO (ARANCIONE SCURO / AMBRA)
+========================================= */
+body.rischio-page {
+  --accent-color: #ff7b00;       /* Arancione scuro */
+  --accent-hover: #ffa54f;       /* Arancione chiaro per hover */
+  --accent-shadow: rgba(255, 123, 0, 0.4);
+}
+
+/* Barre laterali */
+body.rischio-page::before,
+body.rischio-page::after {
+  background: #ff7b00;
+}
+
+/* Hero */
+body.rischio-page .hero h1,
+body.rischio-page .hero h3 {
+  color: #ff7b00;
+  text-shadow: 0 0 8px #ff7b00, 0 0 15px rgba(255, 123, 0, 0.3);
+}
+
+body.rischio-page .btn {
+  background: #ff7b00;
+  color: #000;
+}
+
+body.rischio-page .btn:hover {
+  background: #ffa54f;
+  color: #000;
+}
+
+/* Titoli principali */
+body.rischio-page .intro h2 {
+  color: #ff7b00;
+  border-left: 5px solid #ff7b00;
+}
+
+/* Navbar link */
+body.rischio-page .menu li a:hover,
+body.rischio-page .menu li a.active {
+  color: #ff7b00;
+}
+
+/* Chat button */
+body.rischio-page .chat-btn:hover {
+  background: #ff7b00;
+  color: #000;
+}
+
+/* Footer */
+body.rischio-page .footer-col h3 {
+  color: #ff7b00;
+}
+
+body.rischio-page .footer-col a:hover,
+body.rischio-page .footer-bottom {
+  color: #ff7b00;
+}
+
+/* =========================================
+   TEMA RISCHIO (GRIGIO METALLICO)
+========================================= */
+body.rischio-page {
+  --accent-color: #c0c0c0;      /* Grigio argento */
+  --accent-hover: #e0e0e0;      /* Grigio chiaro brillante */
+  --accent-light: rgba(192, 192, 192, 0.3);
+  background-color: #0a0a0a;    /* Sfondo invariato */
+  color: #fff;
+}
+
+/* Barre laterali decorative */
+body.rischio-page::before,
+body.rischio-page::after {
+  background: linear-gradient(180deg, #c0c0c0, #9e9e9e);
+}
+
+/* Navbar */
+body.rischio-page .logo {
+  color: #c0c0c0;
+}
+body.rischio-page .logo:hover {
+  color: #e0e0e0;
+}
+body.rischio-page .menu li a:hover,
+body.rischio-page .menu li a.active {
+  color: #c0c0c0;
+}
+body.rischio-page .chat-btn:hover {
+  background: #c0c0c0;
+  color: #000;
+}
+
+/* Hero */
+body.rischio-page .hero h1,
+body.rischio-page .hero h3 {
+  color: #c0c0c0;
+  text-shadow: 0 0 10px #c0c0c0aa, 0 0 20px #9e9e9e33;
+}
+body.rischio-page .btn {
+  background: #c0c0c0;
+  color: #000;
+  font-weight: 700;
+}
+body.rischio-page .btn:hover {
+  background: #e0e0e0;
+}
+
+/* Titoli e sezioni */
+body.rischio-page .intro h2 {
+  color: #c0c0c0;
+  border-left: 5px solid #c0c0c0;
+}
+
+/* Footer */
+body.rischio-page .footer-col h3 {
+  color: #c0c0c0;
+}
+body.rischio-page .footer-col a:hover {
+  color: #e0e0e0;
+}
+
+/* Barre laterali testo */
+body.rischio-page .sidebar-left h4,
+body.rischio-page .sidebar-right h4 {
+  color: #c0c0c0;
+}
+body.rischio-page .sidebar-left ul li:hover,
+body.rischio-page .sidebar-right ul li:hover {
+  color: #c0c0c0;
+}
+
+/* Hero Image - versione grigia */
+body.rischio-page .hero-img {
+  box-shadow: 0 0 40px rgba(192, 192, 192, 0.3);
+}
+
+/* =========================================
+   TEMA STRUMENTI (AZZURRO-CIANO)
+========================================= */
+body.strumenti-page {
+  --accent-color: #1abc9c;      /* Azzurro principale */
+  --accent-hover: #48d1cc;      /* Azzurro chiaro */
+  --accent-light: rgba(26, 188, 156, 0.3);
+  background-color: #0a0a0a;    /* Sfondo invariato */
+  color: #fff;
+}
+
+/* Barre laterali decorative */
+body.strumenti-page::before,
+body.strumenti-page::after {
+  background: linear-gradient(180deg, #1abc9c, #16a085);
+}
+
+/* Navbar */
+body.strumenti-page .logo {
+  color: #1abc9c;
+}
+body.strumenti-page .logo:hover {
+  color: #48d1cc;
+}
+body.strumenti-page .menu li a:hover,
+body.strumenti-page .menu li a.active {
+  color: #1abc9c;
+}
+body.strumenti-page .chat-btn:hover {
+  background: #1abc9c;
+  color: #000;
+}
+
+/* Hero */
+body.strumenti-page .hero h1,
+body.strumenti-page .hero h3 {
+  color: #1abc9c;
+  text-shadow: 0 0 10px #1abc9caa, 0 0 20px #16a08533;
+}
+body.strumenti-page .btn {
+  background: #1abc9c;
+  color: #000;
+  font-weight: 700;
+}
+body.strumenti-page .btn:hover {
+  background: #48d1cc;
+}
+
+/* Hero Image shadow */
+body.strumenti-page .hero-img {
+  box-shadow: 0 0 40px rgba(26, 188, 156, 0.3);
+}
+
+/* Titoli e sezioni */
+body.strumenti-page .intro h2 {
+  color: #1abc9c;
+  border-left: 5px solid #1abc9c;
+}
+
+/* Footer */
+body.strumenti-page .footer-col h3 {
+  color: #1abc9c;
+}
+body.strumenti-page .footer-col a:hover {
+  color: #48d1cc;
+}
+
+/* Barre laterali testo */
+body.strumenti-page .sidebar-left h4,
+body.strumenti-page .sidebar-right h4 {
+  color: #1abc9c;
+}
+body.strumenti-page .sidebar-left ul li:hover,
+body.strumenti-page .sidebar-right ul li:hover {
+  color: #1abc9c;
+}
+
+/* =========================================
+   TEMA NEWS (TURCHESE / CIANO SCURO)
+========================================= */
+body.news-page {
+  --accent-color: #00bcd4;      /* Turchese intenso */
+  --accent-hover: #26c6da;      /* Turchese chiaro */
+  --accent-light: rgba(0, 188, 212, 0.3);
+  background-color: #0a0a0a;    /* Sfondo invariato */
+  color: #fff;
+}
+
+/* Barre laterali decorative */
+body.news-page::before,
+body.news-page::after {
+  background: linear-gradient(180deg, #00bcd4, #0097a7);
+}
+
+/* Navbar */
+body.news-page .logo {
+  color: #00bcd4;
+}
+body.news-page .logo:hover {
+  color: #26c6da;
+}
+body.news-page .menu li a:hover,
+body.news-page .menu li a.active {
+  color: #00bcd4;
+}
+body.news-page .chat-btn:hover {
+  background: #00bcd4;
+  color: #000;
+}
+
+/* Hero */
+body.news-page .hero h1,
+body.news-page .hero h3 {
+  color: #00bcd4;
+  text-shadow: 0 0 10px #00bcd4aa, 0 0 20px #0097a733;
+}
+body.news-page .btn {
+  background: #00bcd4;
+  color: #000;
+  font-weight: 700;
+}
+body.news-page .btn:hover {
+  background: #26c6da;
+}
+
+/* Hero Image shadow */
+body.news-page .hero-img {
+  box-shadow: 0 0 40px rgba(0, 188, 212, 0.3);
+}
+
+/* Titoli e sezioni */
+body.news-page .intro h2 {
+  color: #00bcd4;
+  border-left: 5px solid #00bcd4;
+}
+
+/* Footer */
+body.news-page .footer-col h3 {
+  color: #00bcd4;
+}
+body.news-page .footer-col a:hover {
+  color: #26c6da;
+}
+
+/* Barre laterali testo */
+body.news-page .sidebar-left h4,
+body.news-page .sidebar-right h4 {
+  color: #00bcd4;
+}
+body.news-page .sidebar-left ul li:hover,
+body.news-page .sidebar-right ul li:hover {
+  color: #00bcd4;
+}
+
+/* =========================================
+   TEMA FAQ E PRIVACY
+========================================= */
+
+/* Colore principale: blu-turchese misto */
+body.faq-page,
+body.privacy-page {
+  background-color: #0a0a0a; /* sfondo scuro coerente */
+  color: #e0f7fa; /* testo chiaro leggermente turchese */
+}
+
+/* =========================================
+   HERO SPECIFICO
+========================================= */
+body.faq-page .hero h1,
+body.privacy-page .hero h1 {
+  color: #26c6da; /* blu-turchese */
+  text-shadow: 0 0 8px #26c6da, 0 0 15px #26c6da33;
+}
+
+body.faq-page .hero h3,
+body.privacy-page .hero h3 {
+  color: #80deea; /* turchese chiaro */
+}
+
+body.faq-page .hero p,
+body.privacy-page .hero p {
+  color: #b2ebf2;
+}
+
+body.faq-page .btn,
+body.privacy-page .btn {
+  background: linear-gradient(45deg, #26c6da, #80deea);
+  color: #000;
+  font-weight: 700;
+}
+
+body.faq-page .btn:hover,
+body.privacy-page .btn:hover {
+  background: linear-gradient(45deg, #80deea, #26c6da);
+  color: #000;
+}
+
+/* =========================================
+   CONTENUTO PRINCIPALE
+========================================= */
+body.faq-page .intro h2,
+body.privacy-page .intro h2 {
+  color: #26c6da;
+  border-left: 5px solid #26c6da;
+  padding-left: 10px;
+}
+
+body.faq-page .intro p,
+body.faq-page .intro ul li,
+body.privacy-page .intro p,
+body.privacy-page .intro ul li {
+  color: #b2ebf2;
+}
+
+/* =========================================
+   BARRE LATERALI DECORATIVE
+========================================= */
+body.faq-page::before,
+body.faq-page::after,
+body.privacy-page::before,
+body.privacy-page::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  z-index: 1;
+  background: linear-gradient(180deg, #26c6da, #80deea);
+}
+
+body.faq-page::before,
+body.privacy-page::before {
+  left: 0;
+}
+
+body.faq-page::after,
+body.privacy-page::after {
+  right: 0;
+}
+
+/* =========================================
+   SIDEBAR LATERALI
+========================================= */
+body.faq-page .sidebar-left,
+body.faq-page .sidebar-right,
+body.privacy-page .sidebar-left,
+body.privacy-page .sidebar-right {
+  color: #26c6da;
+}
+
+body.faq-page .sidebar-left h4,
+body.faq-page .sidebar-right h4,
+body.privacy-page .sidebar-left h4,
+body.privacy-page .sidebar-right h4 {
+  color: #26c6da;
+}
+
+/* Hover sidebar */
+body.faq-page .sidebar-left ul li:hover,
+body.faq-page .sidebar-right ul li:hover,
+body.privacy-page .sidebar-left ul li:hover,
+body.privacy-page .sidebar-right ul li:hover {
+  color: #80deea;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+body.faq-page .footer,
+body.privacy-page .footer {
+  background: #0f0f0f;
+  color: #b2ebf2;
+}
+
+body.faq-page .footer-col h3,
+body.privacy-page .footer-col h3 {
+  color: #26c6da;
+}
+
+body.faq-page .footer-col a,
+body.privacy-page .footer-col a {
+  color: #b2ebf2;
+}
+
+body.faq-page .footer-col a:hover,
+body.privacy-page .footer-col a:hover {
+  color: #80deea;
+}
+
+body.faq-page .footer-bottom,
+body.privacy-page .footer-bottom {
+  color: #80deea;
+}
+
+
+/* =========================================
+   FOOTER - testi social come il resto dei testi
+========================================= */
+.footer-col .social {
+  display: block;  /* disposti in blocco, non più flex */
+  gap: 0;
+  font-size: 0.95rem; /* uguale al resto del footer */
+  margin-top: 5px;
+}
+
+.footer-col .social li {
+  list-style: none;
+  margin-bottom: 8px;
+  color: #aaa;  /* colore standard del footer */
+}
+
+.footer-col .social li:hover {
+  color: var(--accent-color); /* cambia colore al passaggio se vuoi */
+  cursor: default; /* non appare come link cliccabile */
+}
+
+/* =========================================
+   RESPONSIVE DESIGN ESTESO
+========================================= */
+
+/* Tablet Landscape e schermi medi (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .navbar { padding: 15px 30px; }
+  .hero h1 { font-size: 3rem; }
+  .hero h3 { font-size: 1.5rem; }
+  .hero p { font-size: 1rem; max-width: 85%; }
+  .hero-img { max-width: 90%; }
+  .intro { padding: 50px 20px; }
+  .intro h2 { font-size: 1.8rem; }
+}
+
+/* Tablet Portrait e schermi piccoli (max-width: 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 15px 20px;
+    justify-content: space-between;
   }
-  body.crypto-page::before,
-  body.crypto-page::after {
+
+  /* Hamburger attivo */
+  .hamburger { display: flex; }
+
+  .menu {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.95);
+    flex-direction: column;
     display: none;
+    padding: 20px 0;
+    gap: 15px;
+    backdrop-filter: blur(12px);
   }
+  .menu.active { display: flex; }
+  .menu li { margin: 15px 0; font-size: 1rem; text-align: center; }
+
+  /* Hero */
+  .hero h1 { font-size: 2.4rem; }
+  .hero h3 { font-size: 1.2rem; }
+  .hero p { font-size: 1rem; }
+  .hero-img { max-width: 95%; margin: 20px auto; }
+
+  /* Intro section */
+  .intro { padding: 40px 15px; }
+  .intro h2 { font-size: 1.5rem; }
+  .intro p, .intro ul li { font-size: 0.95rem; }
+
+  /* Sidebar nascosto */
+  .sidebar-left,
+  .sidebar-right { display: none; }
+
+  /* Barre decorative laterali */
+  body::before,
+  body::after { display: none; }
+
+  /* Footer */
+  .footer-container { flex-direction: column; text-align: center; gap: 30px; }
+}
+
+/* Smartphone piccoli (max-width: 480px) */
+@media (max-width: 480px) {
+  .navbar { padding: 10px 15px; height: 70px; }
+  .hero h1 { font-size: 2rem; }
+  .hero h3 { font-size: 1rem; }
+  .hero p { font-size: 0.9rem; max-width: 95%; }
+  .hero-img { width: 100%; max-width: 100%; }
+
+  .intro { padding: 30px 10px; }
+  .intro h2 { font-size: 1.3rem; }
+  .intro p, .intro ul li { font-size: 0.9rem; }
+
+  .btn, .chat-btn { padding: 10px 20px; font-size: 0.9rem; }
+  .menu li { font-size: 0.95rem; }
+
+  .footer { padding: 40px 10px 20px; font-size: 0.85rem; }
+  .footer-col { flex: 1 1 100%; }
+  .footer-col h3 { font-size: 1rem; }
+  .footer-col .social { font-size: 0.9rem; }
+}
+
+/* Generale: fluidità immagini e video */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Testo flessibile e scaling */
+body, h1, h2, h3, h4, p, ul, li, a, button {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Riduzione gap su mobile */
+.menu li a, .chat-btn, .btn {
+  white-space: nowrap;
+}
+
+/* =========================================
+   FOOTER - copy uniforme
+========================================= */
+.footer-bottom {
+  color: #aaa !important; /* Colore grigio neutro per tutti i temi */
 }

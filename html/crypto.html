@@ -25,10 +25,10 @@
         <li><a href="../html/rischio.html">Rischio</a></li>
         <li><a href="../html/strumenti.html">Strumenti</a></li>
         <li><a href="../html/news.html">News</a></li>
-        <li><a href="../html/aggiornamenti.html">Aggiornamenti</a></li>
       </ul>
     </nav>
-    <a href="../html/contatti.html" class="chat-btn">Contattaci</a>
+<a href="contatti.html" class="chat-btn" target="_blank">Contattaci</a>
+
 
     <!-- Hamburger menu -->
     <div class="hamburger">
@@ -36,22 +36,24 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Criptovalute</h1>
-    <h3>Trading Insights</h3>
-    <p>Tutto quello che devi sapere su blockchain, wallet, exchange e strategie di investimento.</p>
+<!-- HERO -->
+<section class="hero">
+  <h1>Criptovalute</h1>
+  <h3>Trading Insights</h3>
+  <p>Tutto quello che devi sapere su blockchain, wallet, exchange e strategie di investimento.</p>
 
-    <!-- Immagine hero -->
-    <img 
-      src="../img/cryptofoto.jpg" 
-      alt="Illustrazione digitale di criptovalute e blockchain" 
-      class="hero-img"
-      loading="lazy"
-    />
+  <!-- Bottone spostato sopra l'immagine -->
+  <a href="#crypto-content" class="btn">Scopri di più</a>
 
-    <a href="#crypto-content" class="btn">Scopri di più</a>
-  </section>
+  <!-- Immagine hero -->
+  <img 
+    src="../img/cryptofoto.jpg" 
+    alt="Illustrazione digitale di criptovalute e blockchain" 
+    class="hero-img"
+    loading="lazy"
+  />
+</section>
+
 
   <!-- CONTENUTO PRINCIPALE -->
   <main id="crypto-content" class="intro">
@@ -118,35 +120,36 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-container">
-      <div class="footer-col">
-        <h3>Chi siamo</h3>
-        <p>Bull vs Bear offre una prospettiva chiara e professionale sul trading digitale.</p>
-      </div>
-
-      <div class="footer-col">
-        <h3>Link utili</h3>
-        <ul>
-          <li><a href="../html/glossario.html">Glossario</a></li>
-          <li><a href="../html/faq.html">FAQ</a></li>
-          <li><a href="../html/privacy.html">Privacy Policy</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3>Seguici</h3>
-        <ul class="social">
-          <li><a href="#" aria-label="Facebook">Facebook</a></li>
-          <li><a href="#" aria-label="Instagram">Instagram</a></li>
-        </ul>
-      </div>
+  <div class="footer-container">
+    <div class="footer-col">
+      <h3>Chi siamo</h3>
+      <p>
+        Bull vs Bear nasce per offrire una prospettiva chiara e professionale sul mondo del trading digitale.
+      </p>
     </div>
 
-    <div class="footer-bottom">
-      <p>© 2025 Bull vs Bear. Tutti i diritti riservati.</p>
+    <div class="footer-col">
+      <h3>Link veloci</h3>
+      <ul>
+        <li><a href="glossario.html">Glossario</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
     </div>
-  </footer>
 
+    <div class="footer-col">
+      <h3>Seguici</h3>
+      <ul class="social">
+        <li>Facebook: info@bullvsbear.com</li>
+        <li>Instagram: ig.bullvsbear</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Bull vs Bear. Tutti i diritti riservati.</p>
+  </div>
+</footer>
   <!-- SCRIPT MENU MOBILE -->
   <script>
     const hamburger = document.querySelector('.hamburger');
