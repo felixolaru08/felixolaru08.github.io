@@ -1,0 +1,428 @@
+/* =========================================
+   IMPORT FONT
+========================================= */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+/* =========================================
+   RESET BASE
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #0a0a0a;
+  color: #fff;
+  line-height: 1.6;
+  min-height: 100vh;
+  position: relative;
+
+  /* Default accent color */
+  --accent-color: #ff9900;
+  --accent-hover: #ffb84d;
+  --accent-light: rgba(255, 153, 0, 0.3);
+  --accent-shadow: rgba(255, 153, 0, 0.3);
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 50px;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar .logo:hover {
+  color: var(--accent-hover);
+}
+
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.menu li a:hover,
+.menu li a.active {
+  color: var(--accent-color);
+}
+
+.chat-btn {
+  background: #222;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.chat-btn:hover {
+  background: var(--accent-color);
+  color: #000;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+/* =========================================
+   HERO
+========================================= */
+.hero {
+  position: relative;
+  text-align: center;
+  padding-top: 140px;
+  padding-bottom: 100px;
+  overflow: hidden;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--accent-color);
+  text-shadow: 0 0 8px var(--accent-color), 0 0 15px var(--accent-light);
+  margin-bottom: 15px;
+}
+
+.hero h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--accent-color);
+  text-shadow: 0 0 8px var(--accent-color), 0 0 15px var(--accent-light);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 25px;
+  opacity: 0.9;
+}
+
+.hero-img {
+  width: 90%;
+  max-width: 950px;
+  height: auto;
+  border-radius: 15px;
+  margin: 30px auto;
+  display: block;
+  box-shadow: 0 0 40px var(--accent-shadow);
+}
+
+.btn {
+  background: var(--accent-color);
+  color: #000;
+  font-weight: 700;
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--accent-hover);
+  color: #000;
+}
+
+/* =========================================
+   CONTENUTO PRINCIPALE
+========================================= */
+.intro {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  color: #ddd;
+}
+
+.intro section {
+  margin-bottom: 60px;
+}
+
+.intro h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  border-left: 5px solid var(--accent-color);
+  padding-left: 10px;
+}
+
+.intro p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+.intro ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+.intro ul li {
+  margin-bottom: 12px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+.footer {
+  background: #0f0f0f;
+  color: #aaa;
+  padding: 60px 20px 30px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 50px;
+  max-width: 1000px;
+  margin: 0 auto 20px;
+  text-align: left;
+}
+
+.footer-col {
+  flex: 1 1 250px;
+}
+
+.footer-col h3 {
+  color: var(--accent-color);
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.footer-col p,
+.footer-col a {
+  color: #aaa;
+  text-decoration: none;
+  line-height: 1.6;
+}
+
+.footer-col a:hover {
+  color: var(--accent-color);
+}
+
+.footer-col ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+/* Testo social "Seguici" */
+.footer-col .social {
+  display: block;
+  font-size: 0.95rem;
+  margin-top: 5px;
+  color: #aaa;        /* colore standard */
+  cursor: default;    /* non cliccabile */
+}
+
+.footer-col .social li {
+  list-style: none;
+  margin-bottom: 8px;
+  color: #aaa;
+}
+
+.footer-col .social li:hover {
+  color: #aaa;        /* disattivato hover solo su "Seguici" */
+}
+
+.footer-bottom {
+  border-top: 1px solid #222;
+  margin-top: 30px;
+  padding-top: 15px;
+  color: #aaa; /* colore neutro */
+  font-size: 0.85rem;
+}
+
+
+/* =========================================
+   TEMI SPECIFICI
+========================================= */
+/* Home */
+body.home-page {
+  --accent-color: #00ff7f;
+  --accent-hover: #33ffaa;
+  --accent-light: rgba(0, 255, 127, 0.3);
+  --accent-shadow: rgba(0, 255, 127, 0.3);
+}
+
+/* Crypto */
+body.crypto-page {
+  --accent-color: #ff9900;
+  --accent-hover: #ffb84d;
+  --accent-light: rgba(255, 153, 0, 0.3);
+  --accent-shadow: rgba(255, 153, 0, 0.3);
+}
+
+/* Forex */
+body.forex-page {
+  --accent-color: #007bff;
+  --accent-hover: #339dff;
+  --accent-light: rgba(0, 123, 255, 0.3);
+  --accent-shadow: rgba(0, 123, 255, 0.3);
+}
+
+/* Futures */
+body.futures-page {
+  --accent-color: #9b59b6;
+  --accent-hover: #b377d2;
+  --accent-light: rgba(155, 89, 182, 0.3);
+  --accent-shadow: rgba(155, 89, 182, 0.3);
+}
+
+/* Glossario */
+body.glossario-page {
+  --accent-color: #f1c40f;
+  --accent-hover: #f4d03f;
+  --accent-light: rgba(241, 196, 15, 0.3);
+  --accent-shadow: rgba(241, 196, 15, 0.3);
+}
+
+/* Strategie */
+body.strategie-page {
+  --accent-color: #e74c3c;
+  --accent-hover: #ff6b5a;
+  --accent-light: rgba(231, 76, 60, 0.3);
+  --accent-shadow: rgba(231, 76, 60, 0.4);
+}
+
+/* Rischio arancione */
+body.rischio-page {
+  --accent-color: #ff7b00;
+  --accent-hover: #ffa54f;
+  --accent-shadow: rgba(255, 123, 0, 0.4);
+}
+
+/* Strumenti */
+body.strumenti-page {
+  --accent-color: #1abc9c;
+  --accent-hover: #48d1cc;
+  --accent-light: rgba(26, 188, 156, 0.3);
+}
+
+/* News */
+body.news-page {
+  --accent-color: #00bcd4;
+  --accent-hover: #26c6da;
+  --accent-light: rgba(0, 188, 212, 0.3);
+}
+
+/* FAQ / Privacy */
+body.faq-page,
+body.privacy-page {
+  background-color: #0a0a0a;
+  color: #e0f7fa;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+/* Tablet 1024px */
+@media (max-width: 1024px) {
+  .navbar { padding: 15px 30px; }
+  .hero h1 { font-size: 3rem; }
+  .hero h3 { font-size: 1.5rem; }
+  .hero p { font-size: 1rem; max-width: 85%; }
+  .hero-img { max-width: 90%; }
+  .intro { padding: 50px 20px; }
+  .intro h2 { font-size: 1.8rem; }
+}
+
+/* Tablet / mobile 768px */
+@media (max-width: 768px) {
+  .navbar { padding: 15px 20px; justify-content: space-between; }
+  .hamburger { display: flex; }
+  .menu { position: absolute; top: 80px; left: 0; right: 0; background: rgba(0,0,0,0.95); flex-direction: column; display: none; padding: 20px 0; gap: 15px; backdrop-filter: blur(12px); }
+  .menu.active { display: flex; }
+  .menu li { margin: 15px 0; font-size: 1rem; text-align: center; }
+  .hero h1 { font-size: 2.4rem; }
+  .hero h3 { font-size: 1.2rem; }
+  .hero p { font-size: 1rem; }
+  .hero-img { max-width: 95%; margin: 20px auto; }
+  .intro { padding: 40px 15px; }
+  .intro h2 { font-size: 1.5rem; }
+  .intro p, .intro ul li { font-size: 0.95rem; }
+  .sidebar-left, .sidebar-right { display: none; }
+  body::before, body::after { display: none; }
+  .footer-container { flex-direction: column; text-align: center; gap: 30px; }
+}
+
+/* Smartphone 480px */
+@media (max-width: 480px) {
+  .navbar { padding: 10px 15px; height: 70px; }
+  .hero h1 { font-size: 2rem; }
+  .hero h3 { font-size: 1rem; }
+  .hero p { font-size: 0.9rem; max-width: 95%; }
+  .hero-img { width: 100%; max-width: 100%; }
+  .intro { padding: 30px 10px; }
+  .intro h2 { font-size: 1.3rem; }
+  .intro p, .intro ul li { font-size: 0.9rem; }
+  .btn, .chat-btn { padding: 10px 20px; font-size: 0.9rem; }
+  .menu li { font-size: 0.95rem; }
+  .footer { padding: 40px 10px 20px; font-size: 0.85rem; }
+  .footer-col { flex: 1 1 100%; }
+  .footer-col h3 { font-size: 1rem; }
+  .footer-col .social { font-size: 0.9rem; }
+}
+
+/* =========================================
+   Generale
+========================================= */
+img, video { max-width: 100%; height: auto; display: block; }
+body, h1, h2, h3, h4, p, ul, li, a, button { word-wrap: break-word; overflow-wrap: break-word; }
+.menu li a, .chat-btn, .btn { white-space: nowrap; }
