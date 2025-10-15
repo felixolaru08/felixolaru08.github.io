@@ -426,3 +426,195 @@ body.privacy-page {
 img, video { max-width: 100%; height: auto; display: block; }
 body, h1, h2, h3, h4, p, ul, li, a, button { word-wrap: break-word; overflow-wrap: break-word; }
 .menu li a, .chat-btn, .btn { white-space: nowrap; }
+
+/* =========================================
+   SEZIONE TABELLA CRYPTO
+========================================= */
+.crypto-table-section {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.crypto-table-section h2 {
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.crypto-table-section p {
+  color: #ccc;
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+.crypto-table-container {
+  overflow-x: auto;
+  margin: 0 auto;
+  max-width: 1000px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px var(--accent-shadow);
+}
+
+.crypto-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.crypto-table thead {
+  background: var(--accent-color);
+  color: #000;
+  font-weight: 700;
+}
+
+.crypto-table th,
+.crypto-table td {
+  padding: 15px 20px;
+  text-align: left;
+}
+
+.crypto-table tbody tr {
+  border-bottom: 1px solid #222;
+  transition: background 0.3s ease;
+}
+
+.crypto-table tbody tr:hover {
+  background: rgba(255, 153, 0, 0.08);
+}
+
+.crypto-table td img.coin-icon {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+
+.crypto-table td.positive {
+  color: #00ff7f;
+  font-weight: 600;
+}
+
+.crypto-table td.negative {
+  color: #ff4d4d;
+  font-weight: 600;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .crypto-table-section h2 { font-size: 1.6rem; }
+  .crypto-table th, .crypto-table td { padding: 10px; font-size: 0.9rem; }
+  .crypto-table td img.coin-icon { width: 22px; height: 22px; }
+}
+
+/* Ombra immagini pagina STRUMENTI (verde acqua) */
+body.strumenti-page img,
+body.strumenti-page .hero-img {
+  box-shadow: 0 0 40px rgba(26, 188, 156, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.strumenti-page img:hover,
+body.strumenti-page .hero-img:hover {
+  box-shadow: 0 0 60px rgba(26, 188, 156, 0.6);
+  transform: translateY(-3px);
+}
+
+/* Ombra immagini pagina NEWS (azzurro) */
+body.news-page img,
+body.news-page .hero-img {
+  box-shadow: 0 0 40px rgba(0, 188, 212, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+body.news-page img:hover,
+body.news-page .hero-img:hover {
+  box-shadow: 0 0 60px rgba(0, 188, 212, 0.6);
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   SEZIONE TABELLA FOREX
+========================================= */
+.forex-table-section {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.forex-table-section h2 {
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.forex-table-section p {
+  color: #ccc;
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+.forex-table-container {
+  overflow-x: auto;
+  margin: 0 auto;
+  max-width: 1000px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px var(--accent-shadow);
+}
+
+.forex-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.forex-table thead {
+  background: var(--accent-color);
+  color: #000;
+  font-weight: 700;
+}
+
+.forex-table th,
+.forex-table td {
+  padding: 15px 20px;
+  text-align: left;
+}
+
+.forex-table tbody tr {
+  border-bottom: 1px solid #222;
+  transition: background 0.3s ease;
+}
+
+.forex-table tbody tr:hover {
+  background: rgba(0, 123, 255, 0.08);
+}
+
+.forex-table td img.coin-icon {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+  margin-right: 8px;
+  border-radius: 50%;
+}
+
+.forex-table td.positive {
+  color: #00ff7f;
+  font-weight: 600;
+}
+
+.forex-table td.negative {
+  color: #ff4d4d;
+  font-weight: 600;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .forex-table-section h2 { font-size: 1.6rem; }
+  .forex-table th, .forex-table td { padding: 10px; font-size: 0.9rem; }
+  .forex-table td img.coin-icon { width: 22px; height: 22px; }
+}
