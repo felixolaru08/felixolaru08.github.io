@@ -534,7 +534,7 @@ body.news-page {
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  flex-wrap: nowrap; /* non fare wrap mai */
+  flex-wrap: nowrap; 
 }
 
 .navbar .logo {
