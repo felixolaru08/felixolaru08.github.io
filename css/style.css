@@ -154,8 +154,28 @@ body {
   margin: 30px auto;
   display: block;
   box-shadow: 0 0 40px var(--accent-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* =========================================
+   Effetto hover immagini generali
+   Escluse immagini dentro tabelle
+========================================= */
+img:not(.crypto-table img):not(.forex-table img),
+.hero-img {
+  box-shadow: 0 0 40px var(--accent-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:not(.crypto-table img):not(.forex-table img):hover,
+.hero-img:hover {
+  box-shadow: 0 0 60px var(--accent-shadow);
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   BOTTONI
+========================================= */
 .btn {
   background: var(--accent-color);
   color: #000;
@@ -262,13 +282,12 @@ body {
   margin-bottom: 10px;
 }
 
-/* Testo social "Seguici" */
 .footer-col .social {
   display: block;
   font-size: 0.95rem;
   margin-top: 5px;
-  color: #aaa;        /* colore standard */
-  cursor: default;    /* non cliccabile */
+  color: #aaa;
+  cursor: default;
 }
 
 .footer-col .social li {
@@ -278,17 +297,104 @@ body {
 }
 
 .footer-col .social li:hover {
-  color: #aaa;        /* disattivato hover solo su "Seguici" */
+  color: #aaa;
 }
 
 .footer-bottom {
   border-top: 1px solid #222;
   margin-top: 30px;
   padding-top: 15px;
-  color: #aaa; /* colore neutro */
+  color: #aaa;
   font-size: 0.85rem;
 }
 
+/* =========================================
+   TABELLE COMPATTE E COLORATE
+========================================= */
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-bottom: 20px;
+  background-color: #111;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(255, 153, 0, 0.2);
+  font-size: 0.85rem;
+}
+
+table th,
+table td {
+  padding: 6px 10px;
+  text-align: center;
+  color: #fff;
+}
+
+table th {
+  background-color: #1a1a1a;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+table tr {
+  transition: background 0.3s ease;
+}
+
+table tr:nth-child(even) {
+  background-color: #0d0d0d;
+}
+
+table tr:hover {
+  background-color: rgba(255, 153, 0, 0.1);
+}
+
+table td img {
+  max-width: 60px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 6px;
+  transition: none !important;
+  box-shadow: none !important;
+}
+
+/* Valori positivi e negativi */
+table td.positive {
+  color: #00ff7f; /* verde */
+  font-weight: 600;
+}
+
+table td.negative {
+  color: #ff4c4c; /* rosso */
+  font-weight: 600;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  table th,
+  table td {
+    padding: 5px 8px;
+    font-size: 0.8rem;
+  }
+  table td img {
+    max-width: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  table th,
+  table td {
+    padding: 4px 6px;
+    font-size: 0.75rem;
+  }
+  table td img {
+    max-width: 40px;
+  }
+  table {
+    font-size: 0.7rem;
+  }
+}
 
 /* =========================================
    TEMI SPECIFICI
@@ -352,21 +458,33 @@ body.rischio-page {
 body.strumenti-page {
   --accent-color: #1abc9c;
   --accent-hover: #48d1cc;
-  --accent-light: rgba(26, 188, 156, 0.3);
+  --accent-shadow: rgba(26, 188, 156, 0.3);
 }
 
 /* News */
 body.news-page {
   --accent-color: #00bcd4;
-  --accent-hover: #26c6da;
-  --accent-light: rgba(0, 188, 212, 0.3);
+  --accent-hover: #38d9ee;
+  --accent-shadow: rgba(0, 188, 212, 0.3);
 }
 
-/* FAQ / Privacy */
-body.faq-page,
-body.privacy-page {
-  background-color: #0a0a0a;
-  color: #e0f7fa;
+/* =========================================
+   LINK NEWS / FAQ
+========================================= */
+#news-content section:last-of-type a,
+#faq-content a {
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.2s ease-in-out;
+  border-bottom: 2px solid transparent;
+}
+
+#news-content section:last-of-type a:hover,
+#faq-content a:hover {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff;
 }
 
 /* =========================================
@@ -407,214 +525,51 @@ body.privacy-page {
   .navbar { padding: 10px 15px; height: 70px; }
   .hero h1 { font-size: 2rem; }
   .hero h3 { font-size: 1rem; }
-  .hero p { font-size: 0.9rem; max-width: 95%; }
-  .hero-img { width: 100%; max-width: 100%; }
-  .intro { padding: 30px 10px; }
-  .intro h2 { font-size: 1.3rem; }
-  .intro p, .intro ul li { font-size: 0.9rem; }
-  .btn, .chat-btn { padding: 10px 20px; font-size: 0.9rem; }
-  .menu li { font-size: 0.95rem; }
-  .footer { padding: 40px 10px 20px; font-size: 0.85rem; }
-  .footer-col { flex: 1 1 100%; }
-  .footer-col h3 { font-size: 1rem; }
-  .footer-col .social { font-size: 0.9rem; }
 }
 
-/* =========================================
-   Generale
-========================================= */
-img, video { max-width: 100%; height: auto; display: block; }
-body, h1, h2, h3, h4, p, ul, li, a, button { word-wrap: break-word; overflow-wrap: break-word; }
-.menu li a, .chat-btn, .btn { white-space: nowrap; }
 
-/* =========================================
-   SEZIONE TABELLA CRYPTO
-========================================= */
-.crypto-table-section {
-  text-align: center;
-  margin-top: 80px;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  flex-wrap: nowrap; /* non fare wrap mai */
 }
 
-.crypto-table-section h2 {
-  color: var(--accent-color);
-  font-weight: 700;
-  font-size: 2rem;
-  margin-bottom: 10px;
+.navbar .logo {
+  flex: 0 0 auto;
 }
 
-.crypto-table-section p {
-  color: #ccc;
-  margin-bottom: 25px;
-  font-size: 1rem;
+.nav-center {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  min-width: 0;
 }
 
-.crypto-table-container {
-  overflow-x: auto;
-  margin: 0 auto;
-  max-width: 1000px;
-  border-radius: 12px;
-  box-shadow: 0 0 25px var(--accent-shadow);
+.menu {
+  display: flex;
+  gap: 20px;
+  flex-shrink: 1;       /* il menu si restringe ma non va a capo */
+  white-space: nowrap;   /* le parole non vanno a capo */
+  overflow: hidden;      /* evita che il menu esca */
+  text-overflow: ellipsis; /* eventuale troncamento */
 }
 
-.crypto-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #111;
-  border-radius: 12px;
-  overflow: hidden;
+.menu li a {
+  white-space: nowrap;
 }
 
-.crypto-table thead {
-  background: var(--accent-color);
-  color: #000;
-  font-weight: 700;
+.chat-btn {
+  flex: 0 0 auto;
+  white-space: nowrap;
+  margin-left: 20px;
 }
 
-.crypto-table th,
-.crypto-table td {
-  padding: 15px 20px;
-  text-align: left;
-}
-
-.crypto-table tbody tr {
-  border-bottom: 1px solid #222;
-  transition: background 0.3s ease;
-}
-
-.crypto-table tbody tr:hover {
-  background: rgba(255, 153, 0, 0.08);
-}
-
-.crypto-table td img.coin-icon {
-  width: 28px;
-  height: 28px;
-  vertical-align: middle;
-  margin-right: 8px;
-  border-radius: 50%;
-}
-
-.crypto-table td.positive {
-  color: #00ff7f;
-  font-weight: 600;
-}
-
-.crypto-table td.negative {
-  color: #ff4d4d;
-  font-weight: 600;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .crypto-table-section h2 { font-size: 1.6rem; }
-  .crypto-table th, .crypto-table td { padding: 10px; font-size: 0.9rem; }
-  .crypto-table td img.coin-icon { width: 22px; height: 22px; }
-}
-
-/* Ombra immagini pagina STRUMENTI (verde acqua) */
-body.strumenti-page img,
-body.strumenti-page .hero-img {
-  box-shadow: 0 0 40px rgba(26, 188, 156, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-body.strumenti-page img:hover,
-body.strumenti-page .hero-img:hover {
-  box-shadow: 0 0 60px rgba(26, 188, 156, 0.6);
-  transform: translateY(-3px);
-}
-
-/* Ombra immagini pagina NEWS (azzurro) */
-body.news-page img,
-body.news-page .hero-img {
-  box-shadow: 0 0 40px rgba(0, 188, 212, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-body.news-page img:hover,
-body.news-page .hero-img:hover {
-  box-shadow: 0 0 60px rgba(0, 188, 212, 0.6);
-  transform: translateY(-3px);
-}
-
-/* =========================================
-   SEZIONE TABELLA FOREX
-========================================= */
-.forex-table-section {
-  text-align: center;
-  margin-top: 80px;
-}
-
-.forex-table-section h2 {
-  color: var(--accent-color);
-  font-weight: 700;
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.forex-table-section p {
-  color: #ccc;
-  margin-bottom: 25px;
-  font-size: 1rem;
-}
-
-.forex-table-container {
-  overflow-x: auto;
-  margin: 0 auto;
-  max-width: 1000px;
-  border-radius: 12px;
-  box-shadow: 0 0 25px var(--accent-shadow);
-}
-
-.forex-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: #111;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.forex-table thead {
-  background: var(--accent-color);
-  color: #000;
-  font-weight: 700;
-}
-
-.forex-table th,
-.forex-table td {
-  padding: 15px 20px;
-  text-align: left;
-}
-
-.forex-table tbody tr {
-  border-bottom: 1px solid #222;
-  transition: background 0.3s ease;
-}
-
-.forex-table tbody tr:hover {
-  background: rgba(0, 123, 255, 0.08);
-}
-
-.forex-table td img.coin-icon {
-  width: 28px;
-  height: 28px;
-  vertical-align: middle;
-  margin-right: 8px;
-  border-radius: 50%;
-}
-
-.forex-table td.positive {
-  color: #00ff7f;
-  font-weight: 600;
-}
-
-.forex-table td.negative {
-  color: #ff4d4d;
-  font-weight: 600;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .forex-table-section h2 { font-size: 1.6rem; }
-  .forex-table th, .forex-table td { padding: 10px; font-size: 0.9rem; }
-  .forex-table td img.coin-icon { width: 22px; height: 22px; }
+/* Hamburger menu anticipato a 1024px */
+@media (max-width: 1024px) {
+  .hamburger { display: flex; }
+  .menu { display: none; position: absolute; top: 80px; left: 0; right: 0; flex-direction: column; background: rgba(0,0,0,0.95); padding: 20px 0; gap: 15px; backdrop-filter: blur(12px); }
+  .menu.active { display: flex; }
 }
